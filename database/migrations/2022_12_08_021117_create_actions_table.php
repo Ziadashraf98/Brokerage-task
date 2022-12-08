@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('phone');
             $table->timestamp('visit');
             $table->foreignId('customer_id')->references('id')->on('customers')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('assigned_by')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
